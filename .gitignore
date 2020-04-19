@@ -134,3 +134,7 @@ dmypy.json
 # Biopython
 *.fasta
 *.gbk
+
+# RStudio
+.Rproj.user
+.Rhistory

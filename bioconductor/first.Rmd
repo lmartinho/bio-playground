@@ -1,0 +1,26 @@
+---
+title: "My First R Markdown document"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Pre-reqs:
+- Bioconductor version 3.10 (BiocManager 1.30.10)
+- genbankr version 1.14.0
+
+# TASK: LOAD TRANSLATION FOR orf1ab AND FIND THE "SARS coronavirus main proteinase." peptides in there
+# https://www.ncbi.nlm.nih.gov/nuccore/MN908947
+# https://enzyme.expasy.org/EC/3.4.22.69
+
+## Load genome
+# Downloaded https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3?report=gbwithparts&log$=seqview into `sequence.gb`
+
+```{r}
+library("genbankr")
+gb = readGenBank("sequence.gb")
+orf1ab_transcript = transcripts(gb)[10]
+View(orf1ab_transcript)
+```
+
